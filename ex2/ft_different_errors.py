@@ -36,7 +36,7 @@ def garden_operations(operation_number) -> None:
         )
 
 
-def test_error_types():
+def test_error_types() -> None:
     garden_operations(0)
     garden_operations(1)
     garden_operations(2)
