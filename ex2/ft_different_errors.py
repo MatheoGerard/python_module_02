@@ -1,8 +1,8 @@
 def garden_operations(operation_number) -> None:
     print(f"Testing operation {operation_number}...")
-    word: str = "bonjour"
-    file_to_open: str = "no_file.txt"
-    nb: float = 42.0
+    word: str = "abc"
+    file_to_open: str = "/non/existent/file"
+    nb: int = 42
     try:
         if operation_number == 0:
             int(word)
@@ -17,23 +17,14 @@ def garden_operations(operation_number) -> None:
         else:
             print("Operation completed successfully")
             return
-    except ValueError:
-        print(
-            "Caught ValueError: "
-            f"invalid literal for int() with base 10: '{word}'"
-        )
-    except ZeroDivisionError:
-        print("Caught ZeroDivisionError: division by zero")
-    except FileNotFoundError:
-        print(
-            "Caught FileNotFoundError: "
-            f"[Errno 2] No such file or directory: '{file_to_open}'"
-        )
-    except TypeError:
-        print(
-            "Caught TypeError: can only "
-            f"concatenate str (not '{nb.__class__.__name__}') to str"
-        )
+    except ValueError as e:
+        print(f"Caught ValueError: {e}")
+    except ZeroDivisionError as e:
+        print(f"Caught ZeroDivisionError: {e}")
+    except FileNotFoundError as e:
+        print(f"Caught FileNotFoundError: {e}")
+    except TypeError as e:
+        print(f"Caught TypeError: {e}")
 
 
 def test_error_types() -> None:

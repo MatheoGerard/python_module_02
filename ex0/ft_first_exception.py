@@ -7,22 +7,16 @@ def test_temperature() -> None:
     temp_str: str = "25"
     print(f"Input data is '{temp_str}'")
     try:
-        print(f"Temperature is now {input_temperature(temp_str)}")
-    except ValueError:
-        print(
-            "Caught input_temperature error: "
-            f"invalid literal for int() with base 10: '{temp_str}'"
-        )
+        print(f"Temperature is now {input_temperature(temp_str)}°C")
+    except ValueError as e:
+        print(f"Caught input_temperature error: {e}")
     print()
     temp_str = "abc"
     print(f"Input data is '{temp_str}'")
     try:
         print(f"Temperature is now {input_temperature(temp_str)}")
-    except ValueError:
-        print(
-            "Caught input_temperature error: "
-            f"invalid literal for int() with base 10: '{temp_str}'"
-        )
+    except ValueError as e:
+        print(f"Caught input_temperature error: {e}")
 
 
 if __name__ == "__main__":
